@@ -101,6 +101,11 @@ public class Recycle_View_Home_Page extends RecyclerView.Adapter<Recycle_View_Ho
     public int getItemCount() {
         return Shops.size();
     }
+    public void fillterlist(ArrayList<Shop> list){
+        Shops=list;
+        notifyDataSetChanged();
+
+    }
 
 
 }

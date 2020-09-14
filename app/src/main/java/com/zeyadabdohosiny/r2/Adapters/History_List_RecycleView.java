@@ -36,13 +36,18 @@ public class History_List_RecycleView extends RecyclerView.Adapter<History_List_
         TextView nameOfTheShop,numberOfPc,theDate,rateTheShop,usercomeornot;
 
 
-        public ExampleViewHolder(@NonNull View itemView) {
+        public ExampleViewHolder(@NonNull View itemView, final OnUserItemClickListener listener) {
             super(itemView);
             shopImage=itemView.findViewById(R.id.Image_For_HistoryPage);
             nameOfTheShop=itemView.findViewById(R.id.Name_For_HistoryPage);
-
             theDate=itemView.findViewById(R.id.HistoryPage_date);
             usercomeornot=itemView.findViewById(R.id.TxusercomeOrnot);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    listener.OnItemClick(getAdapterPosition());
+                }
+            });
 
 
         }
@@ -51,7 +56,7 @@ public class History_List_RecycleView extends RecyclerView.Adapter<History_List_
     @Override
     public ExampleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.history_of_user_card_view,parent,false);
-        History_List_RecycleView.ExampleViewHolder exv=new ExampleViewHolder(v);
+        History_List_RecycleView.ExampleViewHolder exv=new ExampleViewHolder(v,mlistener);
         return exv;
     }
 

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/Image_For_Requuest_page"
+            android:layout_width="92dp"
+            android:layout_height="52dp"
+            android:src="@drawable/hazzard"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name Of the User"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:id="@+id/Name_For_Requuest_page"
+            android:layout_marginLeft="118dp"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pc 1"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:id="@+id/NameOfThePc_For_Requuest_page"
+            android:layout_marginLeft="315dp"
+            android:layout_marginTop="8dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rate"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="210dp"
+        />
+    <TextView
+        android:id="@+id/RateofTheUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rate"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="210dp"
+        />
+        <Button
+            android:id="@+id/Accept_Request_Page"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:textSize="10dp"
+            android:text="Accpted"
+            android:layout_marginTop="45dp"
+            android:layout_marginLeft="110dp"
+
+            />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time and Data"
+        android:layout_marginTop="95dp"
+        android:layout_marginLeft="180dp"
+        android:id="@+id/TimeOftheRequest"/>
+    <Button
+        android:id="@+id/Rejected_requestPage"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:textSize="10dp"
+        android:text="Decline"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="280dp"
+        />
+
+
+    <Button
+        android:id="@+id/UserIsCome"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:textSize="10dp"
+        android:text="User Come"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="110dp"/>
+    <Button
+        android:id="@+id/UserDontCome"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:textSize="10dp"
+        android:text="Not comming"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="280dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height=".2dp"
+        android:layout_marginLeft="95dp"
+        android:layout_marginTop="183dp"
+        android:background="#1F1C18"/>
+
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>

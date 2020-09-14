@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="20dp"
+    android:gravity="bottom"
+    android:paddingTop="25dp">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ProfilePicImgageview"
+        android:layout_width="70dp"
+        android:layout_height="75dp"
+        app:civ_border_width="2dp"
+        android:src="@drawable/hazzard"
+        android:layout_marginTop="20dp"
+        app:civ_border_color="#FF000000"
+        />
+
+    <TextView
+        android:id="@+id/Header_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:text="Coding in Flow"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/Header_Phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="info@codinginflow.com"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:paddingTop="10dp"/>
+
+</LinearLayout>

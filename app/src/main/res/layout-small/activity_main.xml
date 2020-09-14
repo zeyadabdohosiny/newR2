@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.zeyadabdohosiny.r2.UiActicity.MainActivity"
+    android:orientation="vertical"
+    xmlns:ads="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_27sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/welcomeicon" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_40sdp"
+            android:src="@drawable/new_user_name" />
+
+        <EditText
+            android:id="@+id/Login_UserName"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_33sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:hint="User Name"
+            android:textColor="#8E0E00"
+            android:textColorHint="#FFFFFF"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_40sdp"
+            android:src="@drawable/new_ic_pass" />
+
+        <EditText
+            android:id="@+id/Login_Paswword"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_33sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:hint="Password"
+            android:paddingLeft="10dp"
+            android:textColor="#232526"
+            android:textColorHint="#FFFFFF"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:layout_width="@dimen/_133sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_gravity="center_horizontal"
+        android:background="#1e3c72"
+        android:onClick="Login"
+        android:text="Login"
+        android:textColor="	#FFFFFF"
+        android:textSize="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:text="Or"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:layout_width="@dimen/_133sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_1sdp"
+        android:background="#D84F86"
+        android:onClick="Register"
+        android:text="Sign Up"
+        android:textColor="	#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="25dp" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/Facebook_login_button"
+        android:layout_width="@dimen/_133sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:textStyle="bold"/>
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3034528190190998/4343692310">
+
+    </com.google.android.gms.ads.AdView>
+
+</LinearLayout>

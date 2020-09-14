@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="معلومات عن التطبيق"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        />
+
+
+
+    <androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView
+        android:layout_width="389dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:text="*-  اي هو ابلكيشن R2 ؟
+ابلكيشن R2 هو اول برنامج لحجز اجهزه البلايستيشن في مصر
+من خلال التطبيق بتقدر تختار المحل اللي انت عايزه من بين عدد كبير من المحلات وكمان بتختار الجهاز اللي انت عايز تحجزه وانت في بيتك في ثواني
+كمان بنعرضلك ال menus الخاصه بمحلات البلايستيشن اللي بتقدم مأكولات ومشروبات
+وكمان بنعرضلك الاجهزه المتاحه والغير متاحه في كل محل ومكان المحل علي خرائط Google
+ابلكيشن R2 بيعرض المحلات حسب تقيم العملاء
+ازاي اعمل اكونت بشكل صحيح ؟
+التسجيل متاح حاليا فقط عن طريق اكونت الفيس بوك الخاص بيك ومع التحديثات هنضيف طرق اكتر  "
+        android:layout_marginTop="@dimen/_15sdp" />
+
+    <androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView
+        android:layout_width="389dp"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:text="*- زاي احجز جهاز ؟
+تقدر تحجز من خلال اختيار المحل  او عمل بحث في خانه السيرش
+بعد كده تختار الجهاز المتاح للحجز واللي هيبقي مبين من خلال
+كلمه متاح وغير متاح بحيث ان متاح يعني تقدر تحجزه
+وغير متاح يعني الجهاز محجوز بالفعل
+بمجرد اختيار الجهاز والضغط علي كلمه احجز ظرلك رساله تأكيد انك متأكد من حجزك للجهاز واللي بمجرد تأكيدك بيوصل فورا طلب حجز الجهاز للمحل وفي خلال خمس دقايق فقط بيقدر المحل يوافق علي طلب الحجز او يرفضه مع العلم ان في خلال فتره الانتظار الخمس دقائق  بيبقي غير متاح ليك حجز اي جهاز تاني الي ان تنتهي مده الانتظار
+في حاله قبول المحل لطلب حجزك بيكون متاح ليك مده 15 دقيقه فقط للتوجه الي المحل
+في حاله تأخرك في الوصول او عدم ذهابك للمحل بيتم عمل Report من المحل لحسابك وده بيمنعك من الحجز تاني في نفس اليوم واذا تكرر 3 مرات يعرض حسابك للغلق نهائياً من خلالنا "
+        android:textStyle="bold"
+        />
+
+    <androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView
+        android:layout_width="389dp"
+        android:layout_height="60dp"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:text="* قبول او رفض طلب حجزك من المحل يرتبط بتقيمك خلال حجوزاتك السابقه . "
+        android:layout_marginTop="@dimen/_15sdp" />
+
+
+
+
+    <androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView
+        android:layout_width="389dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:text= "*- مميزات ابلكيشن R2 ؟
+بنقدر نوفرلك جهاز بلايستيشن في اي محل وبنوضحلك الاجهزه المتاحه والغير متاحه للحجز
+كمان بنوضحلك اذا كان المحل مفتوح او مغلق
+بنحددلك مكان المحل علي خرائط Google
+وكمان بنعرضلك ال menus الخاصه بالمحلات والاسعار
+ده غير ان بنعرضلك العروض والخصومات الخاصه بمستخدمين ابلكيشن R2 فقط مع المحلات
+وهنعرفك ببطولات البلايستيشن اللي هتتنظم في المحلات اول ب اول ."
+        android:layout_marginTop="@dimen/_10sdp"
+        />
+
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3034528190190998/4343692310">
+    </com.google.android.gms.ads.AdView>
+</LinearLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    tools:context="com.zeyadabdohosiny.r2.UiActicity.MainActivity"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_marginTop="@dimen/_60sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/welcomeicon" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="@dimen/_133sdp"
+        android:layout_height="37dp"
+        android:layout_marginTop="@dimen/_150sdp"
+        android:background="#D84F86"
+        android:layout_gravity="center_horizontal"
+        android:onClick="Register"
+        android:text="Sign Up"
+        android:textColor="	#FFFFFF"
+        android:textSize="25dp"
+        android:textStyle="bold"
+
+        />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/Facebook_login_button"
+        android:layout_width="@dimen/_150sdp"
+        android:textSize="@dimen/_10sdp"
+        android:layout_height="@dimen/_220sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:textStyle="bold"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="start"
+        android:textDirection="locale">
+     <ImageView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:src="@drawable/ic_error_outline_black_24dp"
+          android:layout_marginLeft="@dimen/_105sdp"
+         android:textDirection="locale"
+         android:textAlignment="viewStart"
+
+
+         android:gravity = "start"/>
+
+        <TextView
+            android:id="@+id/About_App_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="About App"
+            android:textStyle="bold"/>
+
+
+    </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3034528190190998/4343692310">
+    </com.google.android.gms.ads.AdView>
+
+</LinearLayout>

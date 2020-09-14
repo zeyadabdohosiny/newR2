@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zeyadabdohosiny.r2.UiActicity.Register_Page">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical">
+
+        <EditText
+
+            android:singleLine="true"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/RegUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:layout_marginRight="5dp"/>
+
+
+        <EditText
+            android:singleLine="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/RegPassword"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:layout_marginRight="5dp"/>
+
+        <EditText
+            android:singleLine="true"
+            android:inputType="textPassword"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/RegConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:layout_marginRight="5dp"/>
+
+
+                <EditText
+                    android:singleLine="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:id="@+id/RegFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="First Name"
+                    android:layout_marginRight="5dp"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+
+
+                <EditText
+                    android:singleLine="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:id="@+id/RegisterLastName"
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Last name"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+
+                <EditText
+                    android:singleLine="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:id="@+id/RegPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Phone"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:layout_marginRight="5dp"/>
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:onClick="Conditions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint=" هل توافق علي الشروط والاحكام ؟ "
+            android:inputType="textPersonName"
+            android:minHeight="40dp"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            android:textColor="#000000"
+            android:textColorHint="#174A9E"
+            android:textSize="14dp"
+            android:textStyle="italic"
+            android:gravity="start|center"/>
+
+    </LinearLayout>
+<Button
+    android:id="@+id/ProfilePic"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Profle Picture"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="130dp"
+    />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="10dp"
+        android:clickable="false"
+        android:onClick="Register"
+        android:text="Register"
+        android:visibility="visible" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login As a Shop"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="10dp"
+        android:onClick="Login"/>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3034528190190998/4343692310">
+    </com.google.android.gms.ads.AdView>
+
+</LinearLayout>

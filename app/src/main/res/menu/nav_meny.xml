@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+<group android:checkableBehavior="single">
+    <item android:id="@+id/nav_offer"
+        android:icon="@drawable/ic_gamepad"
+        android:title="Offer" />
+    <item android:id="@+id/nav_history"
+        android:title="Histoy"
+        android:icon="@drawable/ic_newgame"/>
+    <item android:id="@+id/nav_AboutUs"
+        android:title="About Us"
+        android:icon="@drawable/ic_newgamee"/>/>
+    <item android:id="@+id/nav_Search"
+        android:title="Search"
+        android:icon="@drawable/ic_gamepad"
+        />
+
+
+</group>
+    <item android:title="Communicate">
+
+        <menu>
+            <item  android:title="My rate"
+                android:id="@+id/nav_rate"
+                android:icon="@drawable/ic_newgameeee"/>
+            <item android:title="Logout"
+                android:id="@+id/nav_logoutt"
+                android:icon="@drawable/ic_newgameeee"/>/>
+        </menu>
+    </item>
+</menu>

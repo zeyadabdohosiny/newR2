@@ -9,13 +9,23 @@ public class Shop {
     String MenuImage;
     double langtude;
     double latude;
+    int rate;
 
-    public Shop(String userIdToken, String name, String image_Uri, double langtude, double latude) {
+    public int getRate() {
+        return rate;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
+    }
+
+    public Shop(String userIdToken, String name, String image_Uri, double langtude, double latude, int rate) {
         UserIdToken = userIdToken;
         Name = name;
         Image_Uri = image_Uri;
         this.langtude = langtude;
         this.latude = latude;
+        rate=rate;
     }
 
     public double getLangtude() {
@@ -42,13 +52,14 @@ public class Shop {
         MenuImage = menuImage;
     }
 
-    public Shop(String userIdToken, String name, String image_Uri, int lang, int latd, String menuImage) {
+    public Shop(String userIdToken, String name, String image_Uri, int lang, int latd, String menuImage,int rate) {
         UserIdToken = userIdToken;
         Name = name;
         Image_Uri = image_Uri;
         this.lang = lang;
         this.latd = latd;
         MenuImage = menuImage;
+        rate=rate;
     }
 
     public String getUserIdToken() {

@@ -1,0 +1,105 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    lintOptions {
+        checkReleaseBuilds false
+    }
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.zeyadabdohosiny.r2"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 10
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            multiDexEnabled true
+        }
+
+    }
+}
+
+dependencies {
+
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    def lifecycle_version = "2.1.0"
+    def room_version = "2.2.0-rc01"
+
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.navigation:navigation-fragment:2.2.1'
+    implementation 'androidx.navigation:navigation-ui:2.2.1'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    implementation 'com.google.firebase:firebase-ads:17.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    //FireBase
+    implementation 'com.google.firebase:firebase-core:16.0.4'
+    implementation 'com.google.firebase:firebase-messaging:20.1.2'
+    implementation 'com.google.firebase:firebase-firestore:17.1.2'
+    //    implementation 'com.google.firebase:firebase-auth:16.0.5'
+    implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.google.firebase:firebase-storage:17.0.0'
+    implementation 'com.firebaseui:firebase-ui-storage:1.2.0'
+
+    implementation 'com.firebase:firebase-client-android:2.4.0'
+    implementation 'com.facebook.android:facebook-android-sdk:[5,6)'
+    //Image Piccaso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.jaredrummler:colorpicker:1.1.0'
+    //Recyle View And Design
+
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    //Desgin
+    // implementation 'com.android.support:wear:28.0.0'
+    //Picaso Libarry to Get Image
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.jaredrummler:colorpicker:1.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    //To Make An Image on Circle
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //LifeCycle
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    //One Signal
+
+    // Retrofit
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.retrofit2:retrofit:(insert latest version)'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
+
+    implementation 'com.android.support:multidex:1.0.3'
+
+    implementation 'com.squareup.okhttp3:okhttp:3.6.0'
+    //Notification Manage
+
+
+// Handle Screen Size
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    //ReadMoreOntextView
+    implementation 'com.borjabravo:readmoretextview:2.1.0'
+    //Google Maps
+    implementation 'com.google.maps.android:android-maps-utils:2.0.3'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    //Google Ads
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+}
+apply plugin: 'com.google.gms.google-services'

@@ -7,9 +7,12 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +25,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.firestore.Query;
 import com.zeyadabdohosiny.r2.Adapters.Recycle_View_Home_Page;
 import com.zeyadabdohosiny.r2.MvvmAndRommUserInfo.Shop;
 import com.zeyadabdohosiny.r2.MvvmAndRommUserInfo.Users;
@@ -46,6 +50,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 import javax.annotation.Nullable;
 
@@ -72,9 +77,10 @@ public class Test extends AppCompatActivity {
     ImageView NavigationHeaderImageview,menu_Image_View;
     TextView HeaderName, HeaderPhone;
     Dialog mydialog;
+    EditText searchEditText;
 
     // Recylce View
-
+    Stack <Shop> stack=new Stack<>();
     ArrayList<Shop> Shops = new ArrayList<>();
     private RecyclerView mRecyclerView;
     private Recycle_View_Home_Page mAdapter;
@@ -108,7 +114,9 @@ public class Test extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-        // Check w MMkn TTms7
+
+
+
 
         // Deh 3shan at2kd en l user Maym3mlsh kaza requesy
         SharedPreferences sharedPreferencess = getSharedPreferences(Shared_Prefs, MODE_PRIVATE);
@@ -290,7 +298,7 @@ public class Test extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         shopsRef = db.collection("Shop");
-        shopsRef.addSnapshotListener(new EventListener<QuerySnapshot>() {
+        shopsRef.orderBy("rate", Query.Direction.DESCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
                 // This To not More Load oF the pcs
@@ -298,8 +306,13 @@ public class Test extends AppCompatActivity {
 
                 Shop users = new Shop();
                 for (QueryDocumentSnapshot snapshot : queryDocumentSnapshots) {
+
                     users = snapshot.toObject(Shop.class);
                     Shops.add(users);
+
+                 //   Shops=new ArrayList<>(stack);
+
+                  //  Shops.add(users);
                 }
                 mAdapter = new Recycle_View_Home_Page(Shops);
                 mRecyclerView.setAdapter(mAdapter);
@@ -391,10 +404,47 @@ public class Test extends AppCompatActivity {
                 Intent AboutUsintent=new Intent(this, AboutUsActicty.class);
                 startActivity(AboutUsintent);
                 break;
+            case R.id.nav_Search:
+             Search();
+            break;
 
 
 
         }
+    }
+
+    private void Search() {
+        // Search Edit Text
+        searchEditText=findViewById(R.id.SearchEditText);
+        searchEditText.setVisibility(View.VISIBLE);
+
+        searchEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                filtter_search(editable.toString());
+
+            }
+        });
+    }
+
+    private void filtter_search(String toString) {
+        ArrayList<Shop>fillter=new ArrayList<>();
+        for(Shop shop: Shops){
+              if(shop.getName().toLowerCase().contains(toString.toLowerCase())){
+                  fillter.add(shop);
+              }
+        }
+        mAdapter.fillterlist(fillter);
     }
 
 
@@ -468,5 +518,6 @@ public class Test extends AppCompatActivity {
         SharedPreferences.Editor editor = ref.edit();
         editor.putInt(Time_To_Wait_Request, (int) a);
         editor.apply();
+        String a;
     }
 }

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zeyadabdohosiny.r2.UiActicity.AboutUsActicty">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="معلومات عن التطبيق"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        />
+
+
+
+    <androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView
+        android:layout_width="389dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:text="*-التطبيق بيوفرلك حجز اي جهاز  متاح  في اي محل وفي اي وقت في ثواني وكمان بنعرضلك كل المعلومات الخاصه بالمحلات من Menu و Location "
+        android:layout_marginTop="@dimen/_15sdp" />
+
+    <androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView
+        android:layout_width="389dp"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:text="*-  تطبيق بيمنع اي مستخدم قام بالحجز ولم يتوجه للمحل في خلال المده المحدده 15 دقيقه من قبول طلب الحجز من المحل ن الحجز لمده يوم واذا تكرر الحجز  3 مرات بدون التوجه للمحل بيتم حظر حسابك نهائيا من التطبيق"
+        />
+
+    <androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView
+        android:layout_width="389dp"
+        android:layout_height="60dp"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:text="* قبول او رفض طلب حجزك من المحل يرتبط بتقيمك خلال حجوزاتك السابقه . "
+        android:layout_marginTop="@dimen/_15sdp" />
+
+
+
+
+    <androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView
+        android:layout_width="389dp"
+        android:layout_height="60dp"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:text="*- لتطبيق بيعرض الخصومات الخاصه بالمحلات في خانه Offers"
+        android:layout_marginTop="@dimen/_10sdp"
+        />
+    <androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView
+        android:layout_width="389dp"
+        android:layout_height="60dp"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:layout_marginBottom="5dp"
+        android:text="*- التطبيق غير مسؤل عن اي مشكله او خلاف يحدث بين المحل والمستخدم لاي سبب ."/>
+    <androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="يمكنك ابضا التواصل معنا .. و استقبال الشكاوي المقترحه عن طريق صفحتنا علي الفيس بوك"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:onClick="go"
+        android:text="للتواصل معنا . و استقبال الشكاوي"/>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3034528190190998/4343692310">
+    </com.google.android.gms.ads.AdView>
+
+</LinearLayout>
+
+
+
+

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/Pc_Image_id"
+        android:layout_width="@dimen/_72sdp"
+        android:layout_height="@dimen/_68sdp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/pc" />
+    <TextView
+        android:id="@+id/Number_of_Thepc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="1"
+        android:textSize="50dp"
+        android:layout_marginLeft="@dimen/_125sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="#8716f4"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_100sdp"
+        android:layout_marginTop="@dimen/_57sdp"
+        android:text="Playstaion 4"
+        android:textSize="30dp"
+        android:textStyle="bold"
+
+        />
+
+    <androidx.appcompat.widget.SwitchCompat
+
+        android:id="@+id/Pc_Switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="365dp"
+         />
+
+    <Button
+        android:id="@+id/Pc_Button"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="145dp"
+        android:textColor="	#FFFFFF"
+        android:background="#8716f4"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"
+        android:clickable="false"
+        android:layout_marginTop="150dp"
+        android:text="احجز" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height=".2dp"
+        android:layout_marginLeft="95dp"
+        android:layout_marginTop="@dimen/_155sdp"
+        android:background="#1F1C18"/>
+
+
+</androidx.cardview.widget.CardView>

@@ -3,7 +3,6 @@ package com.zeyadabdohosiny.r2.UiActicity;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -20,14 +19,12 @@ import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
-import com.facebook.login.Login;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
@@ -38,7 +35,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
 import com.zeyadabdohosiny.r2.MvvmAndRommUserInfo.Users;
 import com.zeyadabdohosiny.r2.PlayStationPage;
 import com.zeyadabdohosiny.r2.R;
@@ -84,7 +80,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        //About app
+        // About app
+
         about_app_textview = findViewById(R.id.About_App_tv);
         about_app_textview.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,18 +91,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //ActicityInstance
+        // ActicityInstance
+
         Login_Acticity = this;
         // Shared Pref
         SharedPreferences sharedPreferences = getSharedPreferences(Shared_Prefs, MODE_PRIVATE);
         String Admin = sharedPreferences.getString(User_Admin, "");
-       // Log.d(TAG, Admin);
-        //Cheack IF User Stell Login
+        // Log.d(TAG, Admin);
+        // Cheack IF User Stell Login
+
         firebaseAuth = FirebaseAuth.getInstance();
         // fire BAse FireStore
-     //   Log.d(TAG,"yastaa"+firebaseAuth.getCurrentUser());
+
+
         database = FirebaseFirestore.getInstance();
-        // Test
+
 
         if (firebaseAuth.getCurrentUser() != null && Admin.contains("@Admin.com")) {
             Intent In = new Intent(this, PlayStationPage.class);
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d(TAG, firebaseAuth.getCurrentUser().getUid());
             startActivity(In);
             Login_Acticity.finish();
-          //  Log.d(TAG, Admin);
+            //  Log.d(TAG, Admin);
             return;
 
         }
@@ -128,10 +128,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        //Id Of Views
+        // Id Of Views
+
         Username = findViewById(R.id.Login_UserName);
         Pssword = findViewById(R.id.Login_Paswword);
+
         // Initialize Facebook Login button
+
         mCallbackManager = CallbackManager.Factory.create();
         final Button loginButton = findViewById(R.id.Facebook_login_button);
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -142,20 +145,20 @@ public class MainActivity extends AppCompatActivity {
                 LoginManager.getInstance().registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
-                       // Log.d(TAG, "facebook:onSuccess:" + loginResult);Lo
-                     //  Log.d(TAG,"walllllllla ") ;
+                        // Log.d(TAG, "facebook:onSuccess:" + loginResult);Lo
+                        //  Log.d(TAG,"walllllllla ") ;
                         handleFacebookAccessToken(loginResult.getAccessToken());
                     }
 
                     @Override
                     public void onCancel() {
-          //              Log.d(TAG, "facebook:onCancel");
+                        //              Log.d(TAG, "facebook:onCancel");
                         //                        // ...
                     }
 
                     @Override
                     public void onError(FacebookException error) {
-        //                Log.d(TAG, "facebook:onError", error);
+                        //                Log.d(TAG, "facebook:onError", error);
                         // ...
                     }
                 });
@@ -188,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
         mCallbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
+    // Go to Rigister Page
 
     public void Register(View view) {
         Intent intent = new Intent(this, Register_Page.class);
@@ -197,8 +201,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void handleFacebookAccessToken(final AccessToken token) {
-      //  Log.d(TAG, "handleFacebookAccessToken:" + token);
-        Log.d(TAG,token.getUserId());
+        //  Log.d(TAG, "handleFacebookAccessToken:" + token);
+        Log.d(TAG, token.getUserId());
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
         firebaseAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -206,28 +210,24 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
 
-                            // Sign in success, update UI with the signed-in user's information
-                         //   Log.d(TAG, "signInWithCredential:success");
+
                             FirebaseUser user = firebaseAuth.getCurrentUser();
 
 
                             updateUI(user);
 
                         } else {
-                            // If sign in fails, display a message to the user.
-                         //   Log.w(TAG, "signInWithCredential:failure", task.getException());
 
-                            // updateUI(null);
                         }
 
-                        // ...
+
                     }
                 });
     }
 
     private void updateUI(final FirebaseUser user) {
 
-        rateOfTheUser=200;
+        rateOfTheUser = 200;
         //Toast.makeText(getApplicationContext(), "Da5al hena", Toast.LENGTH_SHORT).show();
         SharedPreferences sharedPreferences = getSharedPreferences(Shared_Prefs, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -237,46 +237,41 @@ public class MainActivity extends AppCompatActivity {
         in.putExtra(Name_Of_The_Intent, "login");
         in.putExtra("UserID", user.getUid().toString());
         in.putExtra(User_Profle_Uri, user.getPhotoUrl());
-      //  Log.d(TAG,"Abl l try"+rateOfTheUser);
-             AppCollection = database.collection("App");
-             AppCollection = database.collection("App");
-             AppCollection.document(user.getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                 @Override
-                 public void onSuccess(DocumentSnapshot documentSnapshot) {
-                    try {
-                        Users users=documentSnapshot.toObject(Users.class);
-                        rateOfTheUser=users.getRate();
+        AppCollection = database.collection("App");
+        AppCollection = database.collection("App");
+        AppCollection.document(user.getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                try {
+                    Users users = documentSnapshot.toObject(Users.class);
+                    rateOfTheUser = users.getRate();
 
-                    }catch (Exception x){
-                      Log.d(TAG,"sfas"+x);
+                } catch (Exception x) {
+                    Log.d(TAG, "sfas" + x);
 
-                    }
-
-
-                 }
-             });
-
-       // Log.d(TAG,"abl mayd5ol  l if"+rateOfTheUser);
-         new Handler().postDelayed(new Runnable() {
-             @Override
-             public void run() {
-                if (rateOfTheUser==200) {
-                   rateOfTheUser = 3;
-
-                 }
-         //        Log.d(TAG,"App Is done");
-                 AppCollection.document(user.getUid()).set(new Users(user.getDisplayName(), ""
-                         , user.getUid().toString(), user.getPhotoUrl().toString(), "", rateOfTheUser, false, true));
-                 startActivity(in);
-                 finish();
-             }
-
-         },1000);
+                }
 
 
-        //  Toast.makeText(Login_Acticity, "When i Register Only ", Toast.LENGTH_SHORT).show()
-        //   Toast.makeText(getApplicationContext(), "Bas mad5lsh hena", Toast.LENGTH_SHORT).show();
+            }
+        });
 
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (rateOfTheUser == 200) {
+                    rateOfTheUser = 3;
+
+                }
+
+                AppCollection.document(user.getUid()).set(new Users(user.getDisplayName(), ""
+                        , user.getUid().toString(), user.getPhotoUrl().toString(), ""
+                        , rateOfTheUser, false, true));
+                startActivity(in);
+                finish();
+            }
+
+        }, 1000);
 
 
     }
